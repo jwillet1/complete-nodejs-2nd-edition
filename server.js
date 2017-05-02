@@ -37,26 +37,26 @@ app.use((req, res, next) => {
 
 app.use(express.static(__dirname + '/public'));
 
+// app.get('/', (req, res) => {
+//   res.send({
+//     name: 'josh',
+//     likes: [
+//       'legos',
+//       'pizza'
+//     ]
+//   });
+// });
+
 app.get('/', (req, res) => {
-  res.send({
-    name: 'josh',
-    likes: [
-      'legos',
-      'pizza'
-    ]
+  res.render('home.hbs', {
+    pageTitle: 'Home Page',
+    welcomeMessage: 'Welcome to my awesome website'
   });
 });
 
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
-  });
-});
-
-app.get('/home', (req, res) => {
-  res.render('home.hbs', {
-    pageTitle: 'Home Page',
-    welcomeMessage: 'Welcome to my awesome website'
   });
 });
 
